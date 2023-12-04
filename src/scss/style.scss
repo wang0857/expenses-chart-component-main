@@ -1,0 +1,194 @@
+/* Overall Setting */
+@import './_variables.scss';
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+body {
+    background-color: $cream;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+
+    & > * {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        color: $dark-brown;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
+}
+
+.app-container {
+    display: grid;
+    gap: 25px;
+}
+
+/* Balance */
+.balance {
+    &-container {
+        background-color: $red;
+        width: 540px;
+        border-radius: $lg;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    &-total {
+        p {
+            color: $pale-orange;
+
+            &:last-child {
+                font-size: 1.6em;
+                font-weight: $bold;
+            }
+        }
+    }
+}
+
+/* Spending */
+.spending {
+    &-container {
+        background-color: $pale-orange;
+        width: 540px;
+        border-radius: $lg;
+        padding: 40px;
+        box-sizing: border-box;
+
+        h2 {
+            font-size: 1.6em;
+        }
+    }
+
+    &-chart {
+        padding-top: $sm;
+        padding-bottom: $xlg;
+        border-bottom: 2px solid #F3ECE4;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-footer {
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-total {
+        p {
+            &:first-child {
+                color: $medium-brown;
+            }
+
+            &:last-child {
+                font-size: 2.3em;
+                font-weight: $bold;
+            }
+        }
+    }
+
+    &-increment {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: end;
+
+        p {
+            &:first-child {
+                font-weight: $bold;
+            }
+
+            &:last-child {
+                color: $medium-brown;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app-container {
+        gap: $md;
+    }
+
+    .balance {
+        &-container {
+            width: 342px;
+            border-radius: $sm;
+            padding: $lg;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        &-total {
+            p {
+                &:first-child {
+                    font-size: .85em;
+                    margin-bottom: 3px;
+                }
+    
+                &:last-child {
+                    font-size: 1.35em;
+                }
+            }
+        }
+    }
+
+    .spending {
+        &-container {
+            width: 342px;
+            border-radius: $sm;
+            padding: 30px $lg;
+
+            h2 {
+                font-size: 1.15em;
+            }
+        }
+
+        &-chart {
+            padding-bottom: 25px;
+        }
+
+        &-footer {
+            padding-top: 30px;
+        }
+
+        &-total {
+            p {
+                &:first-child {
+                    font-size: .85em;
+                    margin-bottom: 3px;
+                }
+    
+                &:last-child {
+                    font-size: 1.75em;
+                }
+            }
+        }
+
+        &-increment {    
+            p {
+                &:first-child {
+                    font-size: .85em;
+                }
+    
+                &:last-child {
+                    font-size: .85em;
+                }
+            }
+        }
+    }
+}
